@@ -22,15 +22,26 @@ body, input, select, button {
 h1 {
   font-family: 'Press Start 2P', cursive;
   font-size: 2em;
-  color: #4CAF50;
+  color: #0f0;
   margin-bottom: 0.5em; /* Increase bottom margin */
 }
 
 p {
   font-family: 'Press Start 2P', cursive;
-  font-size: 1.2em;
+  font-size: 1em;
   margin-bottom: 1em; /* Increase bottom margin */
 }
+
+.description {
+    text-align: justify; 
+    font-family: 'VT323', monospace;
+    text-align: left; /* 或者 center，根据您的设计需要 */
+    padding: 10px 0; /* 添加一些垂直间距 */
+    font-size: 1.5em; /* 调整字体大小以适应您的设计 */
+    line-height: 1.5; /* 改善文本的可读性 */
+    color: #bbb; /* 可以选择一个不太显眼的颜色 */
+    margin-bottom: 20px; /* 在下一个元素之前增加一些空间 */
+  }
 
 .input-row {
   display: flex;
@@ -41,13 +52,13 @@ p {
 }
 
 .input-row label {
-  font-size: 1em;
+  font-size: 1.5em;
   color: #ddd;
 }
 
 #targetAddress, #algorithm {
   padding: 10px;
-  font-size: 1em;
+  font-size: 1.5em;
   color: #fff;
   background: #333;
   border: none;
@@ -67,9 +78,9 @@ p {
 
 #calculate {
   padding: 10px 20px; /* Increase padding for better visibility */
-  font-size: 1em;
+  font-size: 1.5em;
   color: white;
-  background-color: #4CAF50;
+  background-color: #0f0;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -77,24 +88,30 @@ p {
 }
 
 #calculate:hover {
-  background-color: #45a049;
+  background-color: #0f0;
 }
 
+
 .output {
-  text-align: left;
-  white-space: pre-line;
-  background: #000;
-  padding: 20px; /* Increase padding for better readability */
-  border-radius: 5px;
-  font-size: 1em; /* Adjust the font size if needed */
-  min-height: 300px; /* Minimum height for the terminal */
-}
+    text-align: left;
+    white-space: pre-line;
+    background: #000;
+    padding: 20px; /* 或者根据您的设计调整 */
+    border-radius: 5px; /* 给边框添加圆角 */
+    font-size: 1em; /* 调整字体大小 */
+    min-height: 100px; /* 给终端一个最小高度 */
+    color: #0f0; /* 模拟经典的绿色终端文本颜色 */
+    border: 2px solid #0f0; /* 添加绿色边框 */
+    margin-top: 20px; /* 如果需要，添加上边距 */
+    display: block; /* 确保终端总是可见的，即使是空的 */
+  }
 
 /* To style select options */
 option {
   font-family: 'Press Start 2P', cursive;
   background: #333; /* Match the styling of the select */
   color: #fff;
+  font-size: 1.5em; /* 调整字体大小以适应您的设计 */
 }
 
 /* Increase the space between the lines */
