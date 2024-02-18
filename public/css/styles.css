@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body, input, select, button {
+  font-family: 'VT323', monospace;
+  background: #333;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5; /* Adjust for better readability */
+}
+
+.container {
+  width: 80%;
+  margin: 50px auto;
+  padding: 20px;
+  background: #222;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 8px; /* Optional: Adds rounded corners to the container */
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2em;
+  color: #4CAF50;
+  margin-bottom: 0.5em; /* Increase bottom margin */
+}
+
+p {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.2em;
+  margin-bottom: 1em; /* Increase bottom margin */
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Change from 'center' to 'space-between' for spacing */
+  gap: 20px; /* Increase gap between elements */
+  margin-bottom: 2em; /* Increase bottom margin */
+}
+
+.input-row label {
+  font-size: 1em;
+  color: #ddd;
+}
+
+#targetAddress, #algorithm {
+  padding: 10px;
+  font-size: 1em;
+  color: #fff;
+  background: #333;
+  border: none;
+  border-radius: 5px;
+  appearance: none; /* Removes default styling provided by the browser */
+  -webkit-appearance: none; /* Specific for Safari */
+  -moz-appearance: none; /* Specific for Firefox */
+}
+
+#targetAddress {
+  flex-grow: 2; /* Address input will take more space */
+}
+
+#algorithm {
+  flex-grow: 1;
+}
+
+#calculate {
+  padding: 10px 20px; /* Increase padding for better visibility */
+  font-size: 1em;
+  color: white;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'VT323', monospace; /* Ensures the button text is also pixelated */
+}
+
+#calculate:hover {
+  background-color: #45a049;
+}
+
+.output {
+  text-align: left;
+  white-space: pre-line;
+  background: #000;
+  padding: 20px; /* Increase padding for better readability */
+  border-radius: 5px;
+  font-size: 1em; /* Adjust the font size if needed */
+  min-height: 300px; /* Minimum height for the terminal */
+}
+
+/* To style select options */
+option {
+  font-family: 'Press Start 2P', cursive;
+  background: #333; /* Match the styling of the select */
+  color: #fff;
+}
+
+/* Increase the space between the lines */
+.input-row, .output {
+  margin-bottom: 20px; /* Adjust as needed for more space */
+}

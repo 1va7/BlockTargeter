@@ -4,83 +4,24 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BlockTargeter</title>
-<style>
-  body { font-family: Arial, sans-serif; background: #f7f7f7; color: #333; }
-  .container { width: 80%; max-width: 600px; margin: 50px auto; text-align: center; padding: 20px; background: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-  #targetAddress { width: 80%; padding: 10px; margin-bottom: 10px; }
-  #algorithm, #calculate { padding: 10px; margin-bottom: 10px; }
-  .output { margin-top: 20px; text-align: left; white-space: pre-line; }
-  body { font-family: Arial, sans-serif; }
-  .container { width: 50%; margin: auto; text-align: center; padding-top: 50px; }
-  .output { margin-top: 20px; }
-</style>
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <div class="container">
   <h1>BlockTargeter</h1>
-  <p>Make every airdrop worthy</p>
-  <input type="text" id="targetAddress" placeholder="Enter target address">
-  <select id="algorithm">
-    <option value="compatibility">Compatibility</option>
-  </select>
-  <button id="calculate">Calculate</button>
+  <p>Maximize your airdrop ROI.</p>
+  <div class="input-row">
+    <label for="targetAddress">ADDRESS</label>
+    <input type="text" id="targetAddress" placeholder="0x...">
+    <label for="algorithm">ALGORITHM</label>
+    <select id="algorithm">
+      <option value="compatibility">Airdrop Compatibility</option>
+      <!-- Add more algorithms here -->
+    </select>
+    <button id="calculate">TARGET!</button>
+  </div>
   <div class="output" id="output"></div>
 </div>
-
-<script>
-  document.getElementById('calculate').addEventListener('click', function() {
-    var targetAddress = document.getElementById('targetAddress').value;
-    var outputDiv = document.getElementById('output');
-    var steps = [
-      'fetching transaction history…',
-      'fetching asset list…',
-      'analyzing portrait…',
-      'calculating compatibility…',
-      'calculating BlockTargeter score..'
-    ];
-
-    if (!targetAddress) {
-      outputDiv.textContent = 'Please enter a target address.';
-      return;
-    }
-
-    // 开始显示步骤信息
-    var stepIndex = 0;
-    var intervalId = setInterval(function() {
-      if (stepIndex < steps.length) {
-        outputDiv.textContent += '\n' + steps[stepIndex];
-        stepIndex++;
-      } else {
-        clearInterval(intervalId);
-        fetchScore(targetAddress); // 所有步骤完成后获取分数
-      }
-    }, 1000);
-
-    function fetchScore(address) {
-      outputDiv.textContent += '\n' + 'BlockTargeting: ' + address;
-      // 发送 POST 请求到服务器
-      fetch('http://localhost:3000/push-request', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ targetAddress: address })
-      })
-      .then(response => response.json())
-      .then(data => {
-        if (data.score) {
-          outputDiv.textContent += '\nScore: ' + data.score;
-        } else {
-          outputDiv.textContent += '\nError fetching score.';
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        outputDiv.textContent += '\nError fetching score.';
-      });
-    }
-  });
-
-</script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
